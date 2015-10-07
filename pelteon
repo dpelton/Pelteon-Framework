@@ -1,0 +1,88 @@
+#!/bin/bash
+
+echo "The URL for my new project is... "
+read URL
+echo "With this project I plan to... "
+read DESC
+
+echo "Creating new project..."
+
+mkdir $URL
+mkdir $URL/styles
+mkdir $URL/js
+
+echo '
+<html>
+<head>
+<title>'$URL'</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://code.divshot.com/geo-bootstrap/swatch/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+<link rel="stylesheet" type="text/css" href="styles/styles.css" />
+</head>
+<body>
+<div class="fire">
+	<img src="http://www.befreetoday.com.au/wp-content/uploads/2013/02/flames-1.gif">
+	<img src="http://www.befreetoday.com.au/wp-content/uploads/2013/02/flames-1.gif">
+	<img src="http://www.befreetoday.com.au/wp-content/uploads/2013/02/flames-1.gif">
+	<img src="http://www.befreetoday.com.au/wp-content/uploads/2013/02/flames-1.gif">
+	<img src="http://www.befreetoday.com.au/wp-content/uploads/2013/02/flames-1.gif">
+	<img src="http://www.befreetoday.com.au/wp-content/uploads/2013/02/flames-1.gif">
+</div>
+<div class="header">
+	<table class="main">
+		<td><img src="http://code.divshot.com/geo-bootstrap/img/test/7upspot.gif"></td>
+		<td>Welcome to '$URL' where we '$DESC'!</td>
+		<td><img src="http://code.divshot.com/geo-bootstrap/img/test/7upspot.gif"></td>
+	</table>
+</div>
+<div class="footer">
+<div class="construction"><img src="http://code.divshot.com/geo-bootstrap/img/test/construction.gif"></div>
+This site was made by '$USER' using
+<h1>THE PELTEON FRAMEWORK</h1></div>
+</body>
+' > $URL/index.html
+
+echo '
+.main {
+	margin: 0 auto;
+	border: 2px dotted yellow;
+}
+.header {
+	text-align: center;
+	width: 100%;
+}
+.footer {
+	position: absolute;
+	bottom: 20px;
+	width: 100%;
+}
+.construction {
+	text-align: center;
+	position: absoulute;
+	bottom: 50px;
+}
+.fire {
+	height: 150px;
+	width: 9000px;
+	overflow: hidden;
+}
+' > $URL/styles/styles.css
+
+echo '
+
+' > $URL/js/custom.js
+
+sleep 2
+
+echo "Adding dependencies..."
+
+sleep 2
+
+echo "Compiling..."
+
+sleep 2
+
+echo "Done!"
